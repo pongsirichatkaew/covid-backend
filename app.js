@@ -18,6 +18,6 @@ app.get("/", (req, res) => {
   return res.send({ msg: `Server is up on port ${port}` });
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log(`Server is up on port ${port}`);
 });
