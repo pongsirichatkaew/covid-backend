@@ -46,6 +46,7 @@ router.get("/covid/:day", async (req, res) => {
 
   const today = new Date(2021, 0, 7);
   const priorDate = new Date(2021, 0, 7).setDate(today.getDate() - day);
+  const dateRuturn = dateFormat(priorDate, "dd/mm/yyyy");
   const dateAgo = dateFormat(priorDate, "mm/dd/yy");
   const splitDate = dateAgo.split("/");
 
@@ -74,7 +75,7 @@ router.get("/covid/:day", async (req, res) => {
       }
     });
 
-  return res.send({ covidWithDay, date: dateAgo });
+  return res.send({ covidWithDay, date: dateRuturn });
 });
 
 module.exports = router;
