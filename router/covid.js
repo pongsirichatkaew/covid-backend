@@ -74,7 +74,7 @@ router.get("/covid/:day", async (req, res) => {
       }
     });
 
-  return res.send({ covidWithDay });
+  return res.send({ covidWithDay, date: dateAgo });
 });
 
 module.exports = router;
